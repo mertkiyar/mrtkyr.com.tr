@@ -16,7 +16,7 @@ const updateTimer = () => {
 
     if (distance < 0) {
         clearInterval(timerInterval);
-        document.querySelector(".timer").textContent = "Biz geldik!";
+        document.querySelector(".timer").textContent = "Süre tamamlandı, bekle!";
     }
 };
 
