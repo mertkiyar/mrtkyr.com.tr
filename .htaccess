@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^mrtkyr\.com\.tr$ [NC]
+RewriteRule ^(.*)$ https://www.mrtkyr.com.tr/$1 [L,R=301]
