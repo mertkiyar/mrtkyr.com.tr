@@ -1,4 +1,4 @@
-const targetDate = new Date("2024-12-31T23:59:59").getTime();
+const targetDate = new Date("2025-01-15T23:59:59").getTime();
 
 const updateTimer = () => {
     const now = new Date().getTime();
