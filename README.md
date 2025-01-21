@@ -1,2 +1,2 @@
 # mrtkyr.com.tr
-website
+Coming soon..
