@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 25% 97%;
+    --foreground: 221 39% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 221 39% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 221 39% 11%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 221 39% 11%;
+    --muted: 220 14% 92%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 221 83% 53%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --info: 221 83% 53%;
+    --info-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 0% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 80%;
+    --success: 0 0% 80%;
+    --success-foreground: 0 0% 9%;
+    --info: 0 0% 80%;
+    --info-foreground: 0 0% 9%;
+    --warning: 0 0% 80%;
+    --warning-foreground: 0 0% 9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke,
+      opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  /* Make headings transition immediately */
+  html.theme-transition h1,
+  html.theme-transition h2,
+  html.theme-transition h3,
+  html.theme-transition h4,
+  html.theme-transition h5,
+  html.theme-transition h6 {
+    transition-duration: 0ms;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Fix button hover text color */
+.button-primary:hover,
+.button-primary:focus {
+  @apply text-primary-foreground;
+}
+
+/* Apply this class to all primary buttons */
+button[class*="bg-primary"]:hover,
+a[class*="bg-primary"]:hover,
+button[class*="bg-primary"]:focus,
+a[class*="bg-primary"]:focus {
+  @apply text-primary-foreground;
+}
+
+/* Fix navigation hover styles */
+.nav-link:hover {
+  @apply text-white;
+}
+
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@layer components {
+  /* Message styles */
+  .message-info {
+    @apply bg-info/10 text-info dark:bg-secondary dark:text-foreground border-info/20 dark:border-border;
+  }
+
+  .message-success {
+    @apply bg-success/10 text-success dark:bg-secondary dark:text-foreground border-success/20 dark:border-border;
+  }
+
+  .message-warning {
+    @apply bg-warning/10 text-warning-foreground dark:bg-secondary dark:text-foreground border-warning/20 dark:border-border;
+  }
+
+  .message-accent {
+    @apply bg-accent/10 text-accent-foreground dark:bg-secondary dark:text-foreground border-accent/20 dark:border-border;
+  }
+}
+
